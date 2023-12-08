@@ -34,7 +34,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="150dp"
         >
         <Button
             android:id="@+id/startGameButton"
@@ -46,7 +46,8 @@
             android:paddingHorizontal="30dp"
             android:paddingTop="10dp"
             android:paddingBottom="15dp"
-            android:textSize="18sp"
+            android:textSize="22sp"
+            android:textColor="@color/secondaryFontColor"
             android:fontFamily="@font/archivo_black"
             />
 
