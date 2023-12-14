@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,8 @@ class QuizActivity : AppCompatActivity() {
     private lateinit var progressBar: ProgressBar
     private var currQuestion = 0
     private var isAnswerChecked = false
+    private var correctAnswers = 0
+    private var wrongAnswers = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,9 +45,12 @@ class QuizActivity : AppCompatActivity() {
         val currentQuestion = questions[currQuestion]
         questionTextView.text = currentQuestion.question
         questionIndexTextView.text = "Pytanie ${currQuestion + 1}"
-        progressBar.progress = currQuestion+1
+        progressBar.progress = currQuestion + 1
 
-        currentQuestion.answers.forEachIndexed { index, answer ->
+        val shuffledAnswers = currentQuestion.answers.shuffled()
+
+        shuffledAnswers.forEachIndexed { index, answer ->
+            val originalIndex = currentQuestion.answers.indexOf(answer)
             val button = Button(this)
             button.text = answer
             val layoutParams = LinearLayout.LayoutParams(
@@ -62,18 +68,25 @@ class QuizActivity : AppCompatActivity() {
             button.setOnClickListener {
                 if (!isAnswerChecked) {
                     isAnswerChecked = true
-                    checkAnswer(index+1, button)
+                    checkAnswer(originalIndex + 1, button)
                 }
             }
             layout.addView(button)
         }
     }
 
+
     private fun checkAnswer(selectedAnswer: Int, selectedButton: Button) {
         val currentQuestion = questions[currQuestion]
         val correctAnswer = currentQuestion.answer
 
-        selectedButton.setBackgroundResource( if (selectedAnswer == correctAnswer) R.drawable.border_green else R.drawable.border_red)
+        if (selectedAnswer == correctAnswer) {
+            selectedButton.setBackgroundResource(R.drawable.border_green)
+            correctAnswers++
+        } else {
+            selectedButton.setBackgroundResource(R.drawable.border_red)
+            wrongAnswers++
+        }
 
         val handler = Handler()
         handler.postDelayed({
@@ -82,7 +95,11 @@ class QuizActivity : AppCompatActivity() {
                 isAnswerChecked = false
                 showQuestion()
             } else {
-                // koniec quizu
+                val intent = Intent(this, QuizzResult::class.java)
+                intent.putExtra("CORRECT_ANSWERS", correctAnswers)
+                intent.putExtra("WRONG_ANSWERS", wrongAnswers)
+                startActivity(intent)
+                finish()
             }
         }, 3000)
     }
