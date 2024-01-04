@@ -69,18 +69,40 @@ class QuizActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 isTimeUp = true
-                wrongAnswers++
-                currQuestion++
-                if (currQuestion < questions.size) {
-                    showQuestion()
-                } else {
-                    val intent = Intent(this@QuizActivity, QuizzResult::class.java)
-                    intent.putExtra("CORRECT_ANSWERS", correctAnswers)
-                    intent.putExtra("WRONG_ANSWERS", wrongAnswers)
-                    startActivity(intent)
-                    finish()
+                val currentQuestion = questions[currQuestion]
+                val correctAnswer = currentQuestion.answer
+
+                val correctButtonIndex = currentQuestion.answers.indexOfFirst { it == currentQuestion.answers[correctAnswer - 1] }
+                val correctButton = layout.getChildAt(correctButtonIndex) as? Button
+                correctButton?.setBackgroundResource(R.drawable.border_green)
+
+                for ((index, answer) in currentQuestion.answers.withIndex()) {
+                    val button = layout.getChildAt(index) as? Button
+                    if (index == correctButtonIndex) {
+                        button?.setBackgroundResource(R.drawable.border_green)
+                    } else {
+                        button?.setBackgroundResource(R.drawable.border_red)
+                        wrongAnswers++
+                    }
                 }
+
+                val handler = Handler()
+                handler.postDelayed({
+                    currQuestion++
+                    if (currQuestion < questions.size) {
+                        isAnswerChecked = false
+                        showQuestion()
+                    } else {
+                        val intent = Intent(this@QuizActivity, QuizzResult::class.java)
+                        intent.putExtra("CORRECT_ANSWERS", correctAnswers)
+                        intent.putExtra("WRONG_ANSWERS", wrongAnswers)
+                        startActivity(intent)
+                        finish()
+                    }
+                }, 3000)
             }
+
+
         }
 
         countDownTimer.start()
@@ -122,6 +144,10 @@ class QuizActivity : AppCompatActivity() {
         } else {
             selectedButton.setBackgroundResource(R.drawable.border_red)
             wrongAnswers++
+
+            val correctButtonIndex = currentQuestion.answers.indexOfFirst { it == currentQuestion.answers[correctAnswer - 1] }
+            val correctButton = layout.getChildAt(correctButtonIndex) as? Button
+            correctButton?.setBackgroundResource(R.drawable.border_green)
         }
 
         isAnswerChecked = true

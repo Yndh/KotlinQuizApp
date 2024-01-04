@@ -38,7 +38,7 @@ class QuizzResult : AppCompatActivity() {
 
         val returnButton = findViewById<Button>(R.id.returnButton)
         returnButton.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
+            val intent = Intent(this, QuizSelection::class.java)
             startActivity(intent)
             finish() // zakaz cofania
         }

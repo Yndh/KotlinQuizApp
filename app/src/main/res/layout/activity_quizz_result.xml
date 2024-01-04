@@ -134,7 +134,7 @@
         android:id="@+id/returnButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Strona Główna"
+        android:text="Wróć do Quizów"
         android:background="@drawable/border"
         app:backgroundTint="@null"
         android:paddingHorizontal="70dp"
