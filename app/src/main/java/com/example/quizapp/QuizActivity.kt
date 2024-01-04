@@ -35,11 +35,17 @@ class QuizActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.quizProgressBar)
         answerTimeProgressbar = findViewById(R.id.answerTimeProgressBar)
         layout = findViewById(R.id.answersLayout)
+        var quizId = intent.getIntExtra("QUIZ_ID", 0)
 
-        questions = Constants.getQuestions(1)!!
-        progressBar.max = questions.size
-
-        showQuestion()
+        questions = Constants.getQuestions(quizId) ?: emptyList<Question>()
+        if (questions.isEmpty()) {
+            val intent = Intent(this, QuizSelection::class.java)
+            startActivity(intent)
+            finish()
+        } else {
+            progressBar.max = questions.size
+            showQuestion()
+        }
     }
 
     private fun showQuestion() {

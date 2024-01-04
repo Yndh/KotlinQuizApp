@@ -1,5 +1,6 @@
 package com.example.quizapp
 
+import android.content.Intent
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -42,7 +43,10 @@ class QuizSelection : AppCompatActivity() {
             val archivio: Typeface? = ResourcesCompat.getFont(this, R.font.archivo_black)
             button.typeface = archivio
             button.setOnClickListener{
-                //todo
+                val intent = Intent(this@QuizSelection, QuizActivity::class.java)
+                intent.putExtra("QUIZ_ID", quiz.quizId)
+                startActivity(intent)
+                finish()
             }
             layout.addView(button)
         }
