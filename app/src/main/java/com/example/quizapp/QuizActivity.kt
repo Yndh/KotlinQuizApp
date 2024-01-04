@@ -11,6 +11,7 @@ import android.widget.TextView
 import androidx.core.content.res.ResourcesCompat
 import android.os.Handler
 import android.widget.ProgressBar
+import androidx.core.content.ContextCompat
 
 class QuizActivity : AppCompatActivity() {
     private lateinit var questionTextView: TextView
@@ -35,7 +36,7 @@ class QuizActivity : AppCompatActivity() {
         answerTimeProgressbar = findViewById(R.id.answerTimeProgressBar)
         layout = findViewById(R.id.answersLayout)
 
-        questions = Constants.getQuestions()
+        questions = Constants.getQuestions(1)!!
         progressBar.max = questions.size
 
         showQuestion()
@@ -78,7 +79,7 @@ class QuizActivity : AppCompatActivity() {
 
         countDownTimer.start()
 
-        shuffledAnswers.forEachIndexed { index, answer ->
+        shuffledAnswers.forEachIndexed { _, answer ->
             val originalIndex = currentQuestion.answers.indexOf(answer)
             val button = Button(this)
             button.text = answer
@@ -87,10 +88,10 @@ class QuizActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             layoutParams.setMargins(0, 0, 0, 50)
+            button.setPadding(70, 50, 70, 55)
             button.layoutParams = layoutParams
             button.setBackgroundResource(R.drawable.border)
-            button.setTextColor(resources.getColor(R.color.secondaryFontColor))
-            button.setPadding(70, 50, 70, 55)
+            button.setTextColor(ContextCompat.getColor(this, R.color.secondaryFontColor))
             button.textSize = 20f
             val archivio: Typeface? = ResourcesCompat.getFont(this, R.font.archivo_black)
             button.typeface = archivio

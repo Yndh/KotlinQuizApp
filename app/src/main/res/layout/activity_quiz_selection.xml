@@ -36,17 +36,17 @@
         android:layout_marginTop="50dp">
 
         <LinearLayout
-            android:id="@+id/answersLayout"
+            android:id="@+id/quizzesLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center">
 
             <Button
-                android:id="@+id/answer1"
+                android:id="@+id/quiz1"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:text="Kapitan Bomba"
+                android:text="Quiz 1"
                 android:background="@drawable/border"
                 app:backgroundTint="@null"
                 android:paddingHorizontal="70dp"
@@ -58,10 +58,40 @@
                 android:fontFamily="@font/archivo_black"
                 />
             <Button
-                android:id="@+id/answer2"
+                android:id="@+id/quiz2"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Quiz 2"
+                android:background="@drawable/border"
+                app:backgroundTint="@null"
+                android:paddingHorizontal="70dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/secondaryFontColor"
+                android:fontFamily="@font/archivo_black"
+                />
+            <Button
+                android:id="@+id/quiz3"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Quiz 3"
+                android:background="@drawable/border"
+                app:backgroundTint="@null"
+                android:paddingHorizontal="70dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="15dp"
+                android:layout_marginBottom="15dp"
+                android:textSize="18sp"
+                android:textColor="@color/secondaryFontColor"
+                android:fontFamily="@font/archivo_black"
+                />
+            <Button
+                android:id="@+id/quiz4"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:text="Quiz 4"
                 android:background="@drawable/border"
                 app:backgroundTint="@null"
                 android:paddingHorizontal="70dp"

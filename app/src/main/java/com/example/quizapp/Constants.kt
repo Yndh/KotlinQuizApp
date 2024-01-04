@@ -1,10 +1,10 @@
 package com.example.quizapp
 
 object Constants {
-    fun getQuestions(): ArrayList<Question>{
-        val questionsList = ArrayList<Question>()
+    fun getQuizzes(): ArrayList<Quiz>{
+        val quizzesList = ArrayList<Quiz>()
 
-        val questionsData = listOf(
+        val kapitanBombaQuiz = arrayListOf(
             Question(
                 1, "Wybierz poprawny opis Kurvinoxa", listOf(
                     "Silny ale wolny",
@@ -55,10 +55,36 @@ object Constants {
             )
         )
 
-        for (data in questionsData) {
-            questionsList.add(data)
-        }
+        val quiz2t = arrayListOf(
+            Question(
+                1, "Pytanie 1", listOf(
+                    "Odpowiedź A",
+                    "Odpowiedź B",
+                    "Odpowiedź C",
+                    "Odpowiedź D"
+                ), 3, 30
+            ),
+            Question(
+                2, "Pytanie 2", listOf(
+                    "Odpowiedź E",
+                    "Odpowiedź F",
+                    "Odpowiedź G",
+                    "Odpowiedź H"
+                ), 1, 30
+            ),
+        )
 
-        return questionsList
+        val quiz1 = Quiz(1, "Kapitan Bomba", kapitanBombaQuiz)
+        val quiz2 = Quiz(2, "Quiz 2", quiz2t)
+
+        quizzesList.add(quiz1)
+        quizzesList.add(quiz2)
+
+        return quizzesList
+    }
+
+    fun getQuestions(quizId: Int): ArrayList<Question>? {
+        val quiz = getQuizzes().find{ it.quizId == quizId}
+        return quiz?.questions
     }
 }

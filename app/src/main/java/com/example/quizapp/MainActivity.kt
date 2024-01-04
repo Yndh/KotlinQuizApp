@@ -12,9 +12,8 @@ class MainActivity : AppCompatActivity() {
         
         val startButton = findViewById<Button>(R.id.startGameButton)
         startButton.setOnClickListener{
-            val intent = Intent(this, QuizActivity::class.java)
+            val intent = Intent(this, QuizSelection::class.java)
             startActivity(intent)
-            finish() // zakaz cofania
         }
     }
 }
