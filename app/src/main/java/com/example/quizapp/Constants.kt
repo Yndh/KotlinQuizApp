@@ -57,25 +57,25 @@ object Constants {
 
         val quiz2t = arrayListOf(
             Question(
-                1, "Pytanie 1", listOf(
+                1, "Pytanie 1 (C)", listOf(
                     "Odpowiedź A",
                     "Odpowiedź B",
                     "Odpowiedź C",
                     "Odpowiedź D"
-                ), 3, 30
+                ), 3, 10
             ),
             Question(
-                2, "Pytanie 2", listOf(
-                    "Odpowiedź E",
-                    "Odpowiedź F",
-                    "Odpowiedź G",
-                    "Odpowiedź H"
-                ), 1, 30
+                2, "Pytanie 2 (A)", listOf(
+                    "Odpowiedź A",
+                    "Odpowiedź B",
+                    "Odpowiedź C",
+                    "Odpowiedź D"
+                ), 1, 10
             ),
         )
 
         val quiz1 = Quiz(1, "Kapitan Bomba", kapitanBombaQuiz)
-        val quiz2 = Quiz(2, "Quiz 2", quiz2t)
+        val quiz2 = Quiz(2, "Dev Test", quiz2t)
 
         quizzesList.add(quiz1)
         quizzesList.add(quiz2)

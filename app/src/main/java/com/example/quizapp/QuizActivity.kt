@@ -72,21 +72,22 @@ class QuizActivity : AppCompatActivity() {
                 val currentQuestion = questions[currQuestion]
                 val correctAnswer = currentQuestion.answer
 
-                val correctButtonIndex = currentQuestion.answers.indexOfFirst { it == currentQuestion.answers[correctAnswer - 1] }
-                val correctButton = layout.getChildAt(correctButtonIndex) as? Button
-                correctButton?.setBackgroundResource(R.drawable.border_green)
+                val handler = Handler()
 
-                for ((index, answer) in currentQuestion.answers.withIndex()) {
+                for (index in 0 until layout.childCount) {
                     val button = layout.getChildAt(index) as? Button
-                    if (index == correctButtonIndex) {
+                    val answer = button?.text.toString()
+
+                    if (answer == currentQuestion.answers[correctAnswer - 1]) {
                         button?.setBackgroundResource(R.drawable.border_green)
                     } else {
                         button?.setBackgroundResource(R.drawable.border_red)
-                        wrongAnswers++
+                        if (answer != "") {
+                            wrongAnswers++
+                        }
                     }
                 }
 
-                val handler = Handler()
                 handler.postDelayed({
                     currQuestion++
                     if (currQuestion < questions.size) {
@@ -99,9 +100,8 @@ class QuizActivity : AppCompatActivity() {
                         startActivity(intent)
                         finish()
                     }
-                }, 3000)
+                }, 2000)
             }
-
 
         }
 
@@ -165,6 +165,6 @@ class QuizActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
-        }, 3000)
+        }, 2000)
     }
 }
