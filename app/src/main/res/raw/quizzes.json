@@ -79,6 +79,270 @@
   },
   {
     "quizId":2,
+    "quizName":"Blok Ekipa",
+    "questions":[
+      {
+        "id":1,
+        "question":"Jakie jest ulubione powiedzenia Cieślaka",
+        "answers":[
+          "Co tam",
+          "HWDP JP 100%",
+          "Co jest kurwa 1 2 3",
+          "Legia Warszawa to najlepszy klub..."
+        ],
+        "answer":3,
+        "answerTime":10
+      },
+      {
+        "id":2,
+        "question":"Jak ma na imie Rudy",
+        "answers":[
+          "Bastian Obsztyfitykultykiewicz",
+          "Jasiek Dziewięćdziesięciokwadratowski",
+          "Michał Dzwonkotrupież",
+          "Jakub Dziesięciocentymetrowiec"
+        ],
+        "answer":1,
+        "answerTime":10
+      },
+      {
+        "id":3,
+        "question":"Kim jest \"Królowa Dzielni\"",
+        "answers":[
+          "Grażyna Puchacka",
+          "Solaris",
+          "Łysa",
+          "Jowita Puczyk"
+        ],
+        "answer":4,
+        "answerTime":10
+      },
+      {
+        "id":4,
+        "question":"Jaka jest pełna ksywka Spejsona",
+        "answers":[
+          "Adrian Spenison Testosteron Puchacki",
+          "Adrian Spejson Detonator Puchacki",
+          "Samotny Wilk",
+          "Adrian Spejson Puczykowski"
+        ],
+        "answer":2,
+        "answerTime":10
+      },
+      {
+        "id":5,
+        "question":"Jakie było pierwsze auto Wojtaa",
+        "answers":[
+          "Bawara",
+          "Szerszeń ",
+          "Kaszlak",
+          "Bejca"
+        ],
+        "answer":2,
+        "answerTime":10
+      }
+    ]
+  },
+  {
+    "quizId":3,
+    "quizName":"Kotlin",
+    "questions":[
+      {
+        "id":1,
+        "question":"Który z poniższych nie jest typem danych w Kotlinie?",
+        "answers":[
+          "Int",
+          "String",
+          "Double",
+          "Float"
+        ],
+        "answer":4,
+        "answerTime":30
+      },
+      {
+        "id":2,
+        "question":"Które słowo kluczowe używane jest do deklaracji zmiennej stałej w Kotlinie?",
+        "answers":[
+          "val",
+          "var",
+          "const",
+          "let"
+        ],
+        "answer":1,
+        "answerTime":30
+      },
+      {
+        "id":3,
+        "question":"Który operator służy do sprawdzania równości wartości i typu w Kotlinie?",
+        "answers":[
+          "==",
+          "===",
+          "=",
+          "!="
+        ],
+        "answer":1,
+        "answerTime":30
+      },
+      {
+        "id":4,
+        "question":"Która z poniższych nie jest cechą Kotlina?",
+        "answers":[
+          "Język statycznie typowany",
+          "Współpracuje z Java na platformie JVM",
+          "Jest językiem interpretowanym",
+          "Zwiera funkcje rozszerzające"
+        ],
+        "answer":3,
+        "answerTime":30
+      },
+      {
+        "id":5,
+        "question":"Które słowo kluczowe używane jest do tworzenia funkcji w Kotlinie?",
+        "answers":[
+          "fun",
+          "function",
+          "def",
+          "funct"
+        ],
+        "answer":1,
+        "answerTime":30
+      }
+    ]
+  },
+  {
+    "quizId":4,
+    "quizName":"TypeScript",
+    "questions":[
+      {
+        "id":1,
+        "question":"Co to jest 'Union Type' w TypeScript?",
+        "answers":[
+          "Typ, który pozwala na łączenie wielu typów w jeden",
+          "Typ, który może być używany tylko przez jednego użytkownika na raz",
+          "Typ, który reprezentuje tylko liczby całkowite",
+          "Typ, który jest używany wyłącznie do operacji na ciągach znaków"
+        ],
+        "answer":1,
+        "answerTime":30
+      },
+      {
+        "id":2,
+        "question":"Czym różni się 'Interface' od 'Type' w TypeScript?",
+        "answers":[
+          "Interfejsy mogą zawierać tylko deklaracje metod, a typy nie",
+          "Typy mogą być rozszerzane, a interfejsy nie",
+          "Interfejsy są usuwane podczas kompilacji, a typy nie",
+          "Nie ma żadnej różnicy, oba słowa są używane zamiennie"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":3,
+        "question":"Do czego służy 'tsconfig.json' w projekcie TypeScript?",
+        "answers":[
+          "Do przechowywania wszystkich importowanych typów",
+          "Do konfigurowania kompilatora TypeScript",
+          "Jest to plik konfiguracyjny dla narzędzia do testowania kodu",
+          "Do przechowywania danych testowych używanych w projekcie"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":4,
+        "question":"Co to jest 'Generics' w TypeScript?",
+        "answers":[
+          "Są to funkcje, które generują losowe wartości",
+          "Jest to typ danych, który jest ogólny i może być używany w różnych kontekstach",
+          "To metoda programowania służąca do tworzenia generycznych struktur danych",
+          "Jest to sposób na definiowanie wyłącznie typów prostych"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":5,
+        "question":"Jaka jest różnica między 'null' a 'undefined' w TypeScript?",
+        "answers":[
+          "'null' reprezentuje brak wartości, a 'undefined' reprezentuje wartość niezdefiniowaną",
+          "'undefined' oznacza brak wartości, a 'null' oznacza nieprzypisanie zmiennej",
+          "'null' i 'undefined' są używane zamiennie w TypeScript",
+          "'undefined' reprezentuje pustą tablicę, a 'null' reprezentuje pustą listę"
+        ],
+        "answer":1,
+        "answerTime":30
+      }
+    ]
+  },
+  {
+    "quizId":5,
+    "quizName":"React Quiz",
+    "questions":[
+      {
+        "id":1,
+        "question":"Co to jest 'JSX' w React?",
+        "answers":[
+          "Preprocesor stylów do Reacta",
+          "Język znaczników używany do tworzenia struktur UI w React",
+          "Narzędzie do testowania komponentów w React",
+          "Metoda renderowania Reacta na serwerze"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":2,
+        "question":"Co oznacza 'props' w React?",
+        "answers":[
+          "Metoda do manipulowania stanem komponentów",
+          "Dane przekazywane z jednego komponentu do drugiego",
+          "Specjalna składnia do definiowania stylów w komponentach",
+          "Wbudowana biblioteka Reacta do zarządzania stanem aplikacji"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":3,
+        "question":"Jakie są cykle życia komponentu w React?",
+        "answers":[
+          "Montowanie, Aktualizacja, Odmontowanie",
+          "Start, Renderowanie, Stop",
+          "Inicjalizacja, Wykonywanie, Czyszczenie",
+          "Utworzenie, Edycja, Usunięcie"
+        ],
+        "answer":1,
+        "answerTime":30
+      },
+      {
+        "id":4,
+        "question":"Co to są 'hooks' w React?",
+        "answers":[
+          "Funkcje umożliwiające łączenie wielu komponentów",
+          "Fragmenty kodu pozwalające na łączenie różnych elementów interfejsu",
+          "Funkcje umożliwiające użycie stanu i innych funkcji Reacta w komponentach funkcyjnych",
+          "Specjalne komponenty do tworzenia animacji w React"
+        ],
+        "answer":3,
+        "answerTime":30
+      },
+      {
+        "id":5,
+        "question":"Co to jest 'Virtual DOM' w React?",
+        "answers":[
+          "Sztuczny interfejs użytkownika stworzony do testowania aplikacji",
+          "Reprezentacja w pamięci rzeczywistego interfejsu użytkownika do efektywnego renderowania zmian",
+          "Rzeczywisty interfejs użytkownika zbudowany wizualnie na podstawie danych w czasie rzeczywistym",
+          "Sposób na zarządzanie wieloma wirtualnymi interfejsami użytkownika"
+        ],
+        "answer":2,
+        "answerTime":30
+      }
+    ]
+  },
+  {
+    "quizId":6,
     "quizName":"Dev Test",
     "questions":[
       {
