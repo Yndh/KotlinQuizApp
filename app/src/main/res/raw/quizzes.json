@@ -1,112 +1,110 @@
-{
-  "quizzes": [
-    {
-      "quizId": 1,
-      "quizName": "Kapitan Bomba",
-      "questions": [
-        {
-          "id": 1,
-          "question": "Wybierz poprawny opis Kurvinoxa",
-          "answers": [
-            "Silny ale wolny",
-            "Sprytny ale głupi",
-            "Mądry ale słaby",
-            "Mądry i silny"
-          ],
-          "answer": 2,
-          "answerTime": 30
-        },
-        {
-          "id": 2,
-          "question": "Jak Mkbewe jest nazywany przez kosmitów",
-          "answers": [
-            "Szatan",
-            "Zabójca",
-            "Diabeł",
-            "Behemot"
-          ],
-          "answer": 3,
-          "answerTime": 30
-        },
-        {
-          "id": 3,
-          "question": "Kto ma władzę w galaktyce Kujwdubie?",
-          "answers": [
-            "Papież",
-            "Sułtan Kosmitów",
-            "Senator Chujewów",
-            "Gwiezdna Flota"
-          ],
-          "answer": 1,
-          "answerTime": 30
-        },
-        {
-          "id": 4,
-          "question": "Ile procent alkoholu ma wódka \"Skurwolańska\"",
-          "answers": [
-            "9%",
-            "7%",
-            "37.5%",
-            "40%"
-          ],
-          "answer": 2,
-          "answerTime": 30
-        },
-        {
-          "id": 5,
-          "question": "Jak ma na imię Kapitan Bomba",
-          "answers": [
-            "Sebastian",
-            "Tytus",
-            "Janek",
-            "Grzesiek"
-          ],
-          "answer": 1,
-          "answerTime": 30
-        },
-        {
-          "id": 6,
-          "question": "Co obiecał za darmo dla wszystkich Domino Jachaś",
-          "answers": [
-            "Hot Dogi",
-            "Burgery",
-            "Pizzę Hawajską",
-            "Kebaba z Chrzanem"
-          ],
-          "answer": 2,
-          "answerTime": 30
-        }
-      ]
-    },
-    {
-      "quizId": 2,
-      "quizName": "Dev Test",
-      "questions": [
-        {
-          "id": 1,
-          "question": "Pytanie 1 (C)",
-          "answers": [
-            "Odpowiedź A",
-            "Odpowiedź B",
-            "Odpowiedź C",
-            "Odpowiedź D"
-          ],
-          "answer": 2,
-          "answerTime": 10
-        },
-        {
-          "id": 2,
-          "question": "Pytanie 2 (A)",
-          "answers": [
-            "Odpowiedź A",
-            "Odpowiedź B",
-            "Odpowiedź C",
-            "Odpowiedź D"
-          ],
-          "answer": 0,
-          "answerTime": 10
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "quizId":1,
+    "quizName":"Kapitan Bomba",
+    "questions":[
+      {
+        "id":1,
+        "question":"Wybierz poprawny opis Kurvinoxa",
+        "answers":[
+          "Silny ale wolny",
+          "Sprytny ale głupi",
+          "Mądry ale słaby",
+          "Mądry i silny"
+        ],
+        "answer": 2,
+        "answerTime":30
+      },
+      {
+        "id":2,
+        "question":"Jak Mkbewe jest nazywany przez kosmitów",
+        "answers":[
+          "Szatan",
+          "Zabójca",
+          "Diabeł",
+          "Behemot"
+        ],
+        "answer": 3,
+        "answerTime":30
+      },
+      {
+        "id":3,
+        "question":"Kto ma władzę w galaktyce Kujwdubie?",
+        "answers":[
+          "Papież",
+          "Sułtan Kosmitów",
+          "Senator Chujewów",
+          "Gwiezdna Flota"
+        ],
+        "answer": 1,
+        "answerTime":30
+      },
+      {
+        "id":4,
+        "question":"Ile procent alkoholu ma wódka \"Skurwolańska\"",
+        "answers":[
+          "9%",
+          "7%",
+          "37.5%",
+          "40%"
+        ],
+        "answer": 2,
+        "answerTime":30
+      },
+      {
+        "id":5,
+        "question":"Jak ma na imię Kapitan Bomba",
+        "answers":[
+          "Sebastian",
+          "Tytus",
+          "Janek",
+          "Grzesiek"
+        ],
+        "answer":2,
+        "answerTime":30
+      },
+      {
+        "id":6,
+        "question":"Co obiecał za darmo dla wszystkich Domino Jachaś",
+        "answers":[
+          "Hot Dogi",
+          "Burgery",
+          "Pizzę Hawajską",
+          "Kebaba z Chrzanem"
+        ],
+        "answer":3,
+        "answerTime":30
+      }
+    ]
+  },
+  {
+    "quizId":2,
+    "quizName":"Dev Test",
+    "questions":[
+      {
+        "id":1,
+        "question":"Pytanie 1 (C)",
+        "answers":[
+          "Odpowiedź A",
+          "Odpowiedź B",
+          "Odpowiedź C",
+          "Odpowiedź D"
+        ],
+        "answer": 3,
+        "answerTime":10
+      },
+      {
+        "id":2,
+        "question":"Pytanie 2 (A)",
+        "answers":[
+          "Odpowiedź A",
+          "Odpowiedź B",
+          "Odpowiedź C",
+          "Odpowiedź D"
+        ],
+        "answer": 1,
+        "answerTime":10
+      }
+    ]
+  }
+]

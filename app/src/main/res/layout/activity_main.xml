@@ -24,6 +24,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/archivo_black"
+        android:text="Rozwiązuj Quizy i ucz się na eleganckości!"
+        android:textColor="@color/secondaryFontColor"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:paddingHorizontal="10dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
+        />
+
+
 
 
     <LinearLayout
@@ -40,7 +55,7 @@
             android:id="@+id/startGameButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Zacznij grać"
+            android:text="Wybierz Quiz"
             android:background="@drawable/border"
             app:backgroundTint="@null"
             android:paddingHorizontal="30dp"
@@ -51,17 +66,6 @@
             android:fontFamily="@font/archivo_black"
             />
 
-        <Button
-            android:id="@+id/howToPlayButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="12sp"
-            android:text="Jak to działa?"
-            android:background="@color/primaryBackground"
-            android:textColor="@color/secondaryFontColor"
-            app:backgroundTint="@null"
-            android:fontFamily="@font/archivo_black"
-            />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

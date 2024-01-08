@@ -1,90 +1,40 @@
 package com.example.quizapp
 
+import android.content.Context
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import java.io.InputStream
+
 object Constants {
-    fun getQuizzes(): ArrayList<Quiz>{
-        val quizzesList = ArrayList<Quiz>()
 
-        val kapitanBombaQuiz = arrayListOf(
-            Question(
-                1, "Wybierz poprawny opis Kurvinoxa", listOf(
-                    "Silny ale wolny",
-                    "Sprytny ale głupi",
-                    "Mądry ale słaby",
-                    "Mądry i silny"
-                ), 2, 30
-            ),
-            Question(
-                2, "Jak Mkbewe jest nazywany przez kosmitów", listOf(
-                    "Szatan",
-                    "Zabójca",
-                    "Diabeł",
-                    "Behemot"
-                ), 3, 30
-            ),
-            Question(
-                3, "Kto ma władzę w galaktyce Kujwdubie?", listOf(
-                    "Papież",
-                    "Sułtan Kosmitów",
-                    "Senator Chujewów",
-                    "Gwiezdna Flota"
-                ), 1, 30
-            ),
-            Question(
-                4, "Ile procent alkoholu ma wódka \"Skurwolańska\"", listOf(
-                    "9%",
-                    "7%",
-                    "37.5%",
-                    "40%"
-                ), 2, 30
-            ),
-            Question(
-                5, "Jak ma na imię Kapitan Bomba", listOf(
-                    "Sebastian",
-                    "Tytus",
-                    "Janek",
-                    "Grzesiek"
-                ), 2, 30
-            ),
-            Question(
-                6, "Co obiecał za darmo dla wszystkich Domino Jachaś", listOf(
-                    "Hot Dogi",
-                    "Burgery",
-                    "Pizzę Hawajską",
-                    "Kebaba z Chrzanem"
-                ), 3, 30
-            )
-        )
+    private var quizzes: ArrayList<Quiz>? = null
 
-        val quiz2t = arrayListOf(
-            Question(
-                1, "Pytanie 1 (C)", listOf(
-                    "Odpowiedź A",
-                    "Odpowiedź B",
-                    "Odpowiedź C",
-                    "Odpowiedź D"
-                ), 3, 10
-            ),
-            Question(
-                2, "Pytanie 2 (A)", listOf(
-                    "Odpowiedź A",
-                    "Odpowiedź B",
-                    "Odpowiedź C",
-                    "Odpowiedź D"
-                ), 1, 10
-            ),
-        )
+    fun loadQuizzes(context: Context): ArrayList<Quiz>{
+        if (quizzes == null) {
+            quizzes = ArrayList()
+            try {
+                val inputStream: InputStream = context.resources.openRawResource(R.raw.quizzes)
+                val reader = inputStream.bufferedReader()
 
-        val quiz1 = Quiz(1, "Kapitan Bomba", kapitanBombaQuiz)
-        val quiz2 = Quiz(2, "Dev Test", quiz2t)
+                val listType = object : TypeToken<ArrayList<Quiz>>() {}.type
+                val gson = Gson()
+                quizzes?.addAll(gson.fromJson(reader, listType))
 
-        quizzesList.add(quiz1)
-        quizzesList.add(quiz2)
+                inputStream.close()
+            } catch (e: Exception) {
+                println("===========")
+                e.printStackTrace()
+            }
+        }
+        return quizzes ?: ArrayList()
 
-        return quizzesList
+    }
+    fun getQuizzes(context: Context): ArrayList<Quiz>{
+        return loadQuizzes(context)
     }
 
-    fun getQuestions(quizId: Int): ArrayList<Question>? {
-        val quiz = getQuizzes().find{ it.quizId == quizId}
+    fun getQuestions(quizId: Int, context: Context): ArrayList<Question>? {
+        val quiz = getQuizzes(context).find{ it.quizId == quizId}
         return quiz?.questions
     }
 }

@@ -37,7 +37,7 @@ class QuizActivity : AppCompatActivity() {
         layout = findViewById(R.id.answersLayout)
         var quizId = intent.getIntExtra("QUIZ_ID", 0)
 
-        questions = Constants.getQuestions(quizId) ?: emptyList<Question>()
+        questions = Constants.getQuestions(quizId, this) ?: emptyList<Question>()
         if (questions.isEmpty()) {
             val intent = Intent(this, QuizSelection::class.java)
             startActivity(intent)
@@ -112,7 +112,7 @@ class QuizActivity : AppCompatActivity() {
             val button = Button(this)
             button.text = answer
             val layoutParams = LinearLayout.LayoutParams(
-                750,
+                850,
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             layoutParams.setMargins(0, 0, 0, 50)
@@ -120,7 +120,14 @@ class QuizActivity : AppCompatActivity() {
             button.layoutParams = layoutParams
             button.setBackgroundResource(R.drawable.border)
             button.setTextColor(ContextCompat.getColor(this, R.color.secondaryFontColor))
-            button.textSize = 20f
+            val textLength = answer.length
+            val textSize = when {
+                textLength > 15 -> 14f
+                textLength > 10 -> 18f
+                else -> 20f
+            }
+            button.textSize = textSize
+
             val archivio: Typeface? = ResourcesCompat.getFont(this, R.font.archivo_black)
             button.typeface = archivio
             button.setOnClickListener {

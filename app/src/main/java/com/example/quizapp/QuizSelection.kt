@@ -17,7 +17,7 @@ class QuizSelection : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_selection)
 
-        quizzes = Constants.getQuizzes()
+        quizzes = Constants.getQuizzes(this)
         
         layout = findViewById(R.id.quizzesLayout)
 
