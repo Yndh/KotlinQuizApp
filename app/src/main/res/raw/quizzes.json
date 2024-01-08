@@ -340,35 +340,5 @@
         "answerTime":30
       }
     ]
-  },
-  {
-    "quizId":6,
-    "quizName":"Dev Test",
-    "questions":[
-      {
-        "id":1,
-        "question":"Pytanie 1 (C)",
-        "answers":[
-          "Odpowiedź A",
-          "Odpowiedź B",
-          "Odpowiedź C",
-          "Odpowiedź D"
-        ],
-        "answer": 3,
-        "answerTime":10
-      },
-      {
-        "id":2,
-        "question":"Pytanie 2 (A)",
-        "answers":[
-          "Odpowiedź A",
-          "Odpowiedź B",
-          "Odpowiedź C",
-          "Odpowiedź D"
-        ],
-        "answer": 1,
-        "answerTime":10
-      }
-    ]
   }
 ]
