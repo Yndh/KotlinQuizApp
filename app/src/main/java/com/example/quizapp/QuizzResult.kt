@@ -1,11 +1,11 @@
 package com.example.quizapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 
 class QuizzResult : AppCompatActivity() {
 
@@ -27,8 +27,8 @@ class QuizzResult : AppCompatActivity() {
         percentTextView = findViewById(R.id.percentTextView)
 
 
-        correctAnswersTextView.text = "$correctAnswers / ${correctAnswers + incorrectAnswers}"
-        wrongAnswersTextView.text = "$incorrectAnswers / ${correctAnswers + incorrectAnswers}"
+        correctAnswersTextView.text = "$correctAnswers / ${totalQuestions}"
+        wrongAnswersTextView.text = "$incorrectAnswers / ${totalQuestions}"
         progressBar.max = totalQuestions
         progressBar.progress = correctAnswers
         val percent = ((correctAnswers.toFloat() / totalQuestions) * 100).toInt()

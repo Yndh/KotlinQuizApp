@@ -2,10 +2,10 @@ package com.example.quizapp
 
 import android.content.Intent
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.LinearLayout
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 
@@ -13,6 +13,7 @@ class QuizSelection : AppCompatActivity() {
 
     private lateinit var layout: LinearLayout
     private lateinit var quizzes: ArrayList<Quiz>
+    private lateinit var returnButton: Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_selection)
@@ -20,6 +21,12 @@ class QuizSelection : AppCompatActivity() {
         quizzes = Constants.getQuizzes(this)
         
         layout = findViewById(R.id.quizzesLayout)
+
+        returnButton = findViewById(R.id.returnButton)
+        returnButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         showQuizzes()
     }

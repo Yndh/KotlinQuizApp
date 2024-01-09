@@ -106,8 +106,8 @@
             >
             <TextView
                 android:id="@+id/wrongAnswers"
-                android:layout_width="100dp"
-                android:layout_height="70dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:background="@drawable/border"
                 android:gravity="center"
                 android:text="1/12"
