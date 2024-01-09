@@ -2,16 +2,16 @@ package com.example.quizapp
 
 import android.content.Intent
 import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.widget.Button
 import android.widget.LinearLayout
-import android.widget.TextView
-import androidx.core.content.res.ResourcesCompat
-import android.os.Handler
 import android.widget.ProgressBar
+import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 
 class QuizActivity : AppCompatActivity() {
     private lateinit var questionTextView: TextView
@@ -116,7 +116,7 @@ class QuizActivity : AppCompatActivity() {
                 LinearLayout.LayoutParams.WRAP_CONTENT
             )
             layoutParams.setMargins(0, 0, 0, 50)
-            button.setPadding(70, 50, 70, 55)
+            button.setPadding(50, 50, 50, 55)
             button.layoutParams = layoutParams
             button.setBackgroundResource(R.drawable.border)
             button.setTextColor(ContextCompat.getColor(this, R.color.secondaryFontColor))
